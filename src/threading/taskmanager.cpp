@@ -3,6 +3,8 @@
 #include <QThreadPool>
 #include <QPainter>
 #include <QThread>
+#include <QVector>
+#include <functional>
 #include <cmath>
 
 TaskManager::TaskManager(QObject* parent)
@@ -191,11 +193,12 @@ void TaskManager::startProcessing()
     indices.reserve(regions.size());
     for (int i = 0; i < regions.size(); ++i) indices.push_back(i);
 
-    auto mapFunc = [this, regions](int idx) -> RegionResult {
+    std::function<RegionResult(const int&)> mapFunc = [this, regions](const int& idx) -> RegionResult {
         if (idx < 0 || idx >= regions.size()) {
             RegionResult dummy;
             dummy.regionIndex = idx;
             dummy.elapsedMs = 0;
+            dummy.threadId = 0;
             return dummy;
         }
         const QRect& r = regions[idx];
@@ -204,6 +207,7 @@ void TaskManager::startProcessing()
             res.regionIndex = idx;
             res.region = r;
             res.elapsedMs = 0;
+            res.threadId = 0;
             return res;
         }
         RegionResult res = processRegion(idx, r, m_filters);

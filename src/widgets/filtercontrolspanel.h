@@ -37,7 +37,6 @@ private slots:
     void onMoveDown();
     void onFilterSelected(int row);
     void onParamChanged();
-    void updatePreviewParams();
 
 private:
     void setupParamWidgets();

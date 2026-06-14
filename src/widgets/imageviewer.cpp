@@ -137,6 +137,11 @@ void ImageViewer::adjustScrollBar(QScrollBar* bar, double factor)
 
 void ImageViewer::wheelEvent(QWheelEvent* event)
 {
+    handleWheelEvent(event);
+}
+
+void ImageViewer::handleWheelEvent(QWheelEvent* event)
+{
     if (m_image.isNull()) return;
     if (event->modifiers() & Qt::ControlModifier) {
         if (event->angleDelta().y() > 0) {

@@ -48,7 +48,9 @@ void CompareViewer::setupUi()
     bg->addButton(m_originalBtn, OriginalOnly);
     bg->addButton(m_resultBtn, ResultOnly);
     bg->addButton(m_toggleBtn, ToggleView);
-    connect(bg, QOverload<int>::of(&QButtonGroup::buttonClicked), this, &CompareViewer::setViewMode);
+    connect(bg, QOverload<int>::of(&QButtonGroup::buttonClicked), this, [this](int id) {
+        setViewMode(static_cast<ViewMode>(id));
+    });
 
     tbLayout->addWidget(new QLabel(QStringLiteral("显示模式:"), m_toolBar));
     tbLayout->addWidget(m_splitBtn);
@@ -301,9 +303,9 @@ void CompareViewer::wheelEvent(QWheelEvent* event)
 {
     if (event->modifiers() & Qt::ControlModifier) {
         if (m_stackedWidget->currentWidget() == m_originalViewer) {
-            m_originalViewer->wheelEvent(event);
+            m_originalViewer->handleWheelEvent(event);
         } else if (m_stackedWidget->currentWidget() == m_resultViewer) {
-            m_resultViewer->wheelEvent(event);
+            m_resultViewer->handleWheelEvent(event);
         }
         event->accept();
         return;

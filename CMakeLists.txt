@@ -9,6 +9,10 @@ set(CMAKE_AUTOUIC ON)
 
 find_package(Qt5 5.14 COMPONENTS Core Gui Widgets Concurrent REQUIRED)
 
+if(MSVC)
+    add_compile_options(/utf-8)
+endif()
+
 set(PROJECT_SOURCES
     src/main.cpp
     src/mainwindow.cpp

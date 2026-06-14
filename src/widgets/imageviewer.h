@@ -23,6 +23,7 @@ public:
     double zoomFactor() const { return m_zoomFactor; }
 
     void showGridOverlay(int rows, int cols, bool show);
+    void handleWheelEvent(QWheelEvent* event);
 
 signals:
     void zoomChanged(double factor);
