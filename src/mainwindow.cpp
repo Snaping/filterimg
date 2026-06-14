@@ -11,6 +11,8 @@
 #include <QStyle>
 #include <QLabel>
 #include <QProgressBar>
+#include <QtConcurrent>
+#include <utility>
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent)
@@ -21,11 +23,20 @@ MainWindow::MainWindow(QWidget* parent)
     , m_progressDock(nullptr)
     , m_progressPanel(nullptr)
     , m_taskManager(new TaskManager(this))
+    , m_previewTimer(new QTimer(this))
+    , m_previewWatcher(new QFutureWatcher<QPair<QImage, qint64>>(this))
+    , m_previewDirty(false)
+    , m_previewSerial(0)
 {
     setWindowTitle(QStringLiteral("多线程图像滤镜处理器"));
     resize(1280, 800);
     setAcceptDrops(true);
     setDockNestingEnabled(true);
+
+    m_previewTimer->setSingleShot(true);
+    m_previewTimer->setInterval(250);
+    connect(m_previewTimer, &QTimer::timeout, this, &MainWindow::onDebouncePreview);
+    connect(m_previewWatcher, &QFutureWatcher<QImage>::finished, this, &MainWindow::onPreviewFinished);
 
     setupUi();
     setupMenuBar();
@@ -371,21 +382,64 @@ void MainWindow::onFilterChainChanged()
 {
     m_compareViewer->setGridOverlay(m_filterPanel->gridRows(), m_filterPanel->gridCols(), m_actionToggleGrid->isChecked());
     updateActions();
+    auto chain = m_filterPanel->currentFilterChain();
+    if (!chain.isEmpty() && !m_originalImage.isNull() && !m_taskManager->isProcessing()) {
+        m_previewDirty = true;
+        m_previewTimer->start();
+    }
 }
 
 void MainWindow::onParametersChanged()
 {
     auto chain = m_filterPanel->currentFilterChain();
     if (!chain.isEmpty() && !m_originalImage.isNull() && !m_taskManager->isProcessing()) {
-        QImage result = m_originalImage;
-        for (const auto& f : chain) {
+        m_previewDirty = true;
+        m_previewTimer->start();
+    }
+}
+
+void MainWindow::onDebouncePreview()
+{
+    if (!m_previewDirty) return;
+    auto chain = m_filterPanel->currentFilterChain();
+    if (chain.isEmpty() || m_originalImage.isNull() || m_taskManager->isProcessing()) return;
+
+    if (m_previewWatcher->isRunning()) return;
+
+    m_previewDirty = false;
+    m_previewSerial++;
+    qint64 serial = m_previewSerial;
+    QImage source = m_originalImage;
+    QList<FilterParams> filters = chain;
+
+    statusBar()->showMessage(QStringLiteral("正在异步预览..."));
+
+    auto worker = [source, filters, serial]() -> QPair<QImage, qint64> {
+        QImage result = source;
+        for (const auto& f : filters) {
             result = Filter::apply(result, f);
         }
-        m_resultImage = result;
-        m_compareViewer->setResultImage(result);
-        m_hasUnsavedChanges = true;
-        statusBar()->showMessage(QStringLiteral("已根据新参数实时更新结果 (单线程预览)"));
-        updateActions();
+        return qMakePair(result, serial);
+    };
+
+    m_previewWatcher->setFuture(QtConcurrent::run(worker));
+}
+
+void MainWindow::onPreviewFinished()
+{
+    QPair<QImage, qint64> res = m_previewWatcher->result();
+    QImage result = res.first;
+    qint64 serial = res.second;
+    if (serial != m_previewSerial) {
+        return;
+    }
+    m_resultImage = result;
+    m_compareViewer->setResultImage(result);
+    m_hasUnsavedChanges = true;
+    statusBar()->showMessage(QStringLiteral("预览已实时更新 (异步)"));
+    updateActions();
+    if (m_previewDirty) {
+        m_previewTimer->start();
     }
 }
 

@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[30];
-    char stringdata0[368];
+    QByteArrayData data[32];
+    char stringdata0[404];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -61,7 +61,9 @@ QT_MOC_LITERAL(25, 317, 8), // "onZoomIn"
 QT_MOC_LITERAL(26, 326, 9), // "onZoomOut"
 QT_MOC_LITERAL(27, 336, 11), // "onFitWindow"
 QT_MOC_LITERAL(28, 348, 11), // "onZoomReset"
-QT_MOC_LITERAL(29, 360, 7) // "onAbout"
+QT_MOC_LITERAL(29, 360, 7), // "onAbout"
+QT_MOC_LITERAL(30, 368, 17), // "onDebouncePreview"
+QT_MOC_LITERAL(31, 386, 17) // "onPreviewFinished"
 
     },
     "MainWindow\0onOpenImage\0\0onSaveImage\0"
@@ -74,7 +76,8 @@ QT_MOC_LITERAL(29, 360, 7) // "onAbout"
     "idx\0ms\0onFilterChainChanged\0"
     "onParametersChanged\0onToggleGrid\0show\0"
     "onZoomIn\0onZoomOut\0onFitWindow\0"
-    "onZoomReset\0onAbout"
+    "onZoomReset\0onAbout\0onDebouncePreview\0"
+    "onPreviewFinished"
 };
 #undef QT_MOC_LITERAL
 
@@ -84,7 +87,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      19,   14, // methods
+      21,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -92,25 +95,27 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  109,    2, 0x08 /* Private */,
-       3,    0,  110,    2, 0x08 /* Private */,
-       4,    0,  111,    2, 0x08 /* Private */,
-       5,    0,  112,    2, 0x08 /* Private */,
-       6,    0,  113,    2, 0x08 /* Private */,
-       7,    0,  114,    2, 0x08 /* Private */,
-       8,    2,  115,    2, 0x08 /* Private */,
-      12,    0,  120,    2, 0x08 /* Private */,
-      13,    0,  121,    2, 0x08 /* Private */,
-      14,    3,  122,    2, 0x08 /* Private */,
-      18,    2,  129,    2, 0x08 /* Private */,
-      21,    0,  134,    2, 0x08 /* Private */,
-      22,    0,  135,    2, 0x08 /* Private */,
-      23,    1,  136,    2, 0x08 /* Private */,
-      25,    0,  139,    2, 0x08 /* Private */,
-      26,    0,  140,    2, 0x08 /* Private */,
-      27,    0,  141,    2, 0x08 /* Private */,
-      28,    0,  142,    2, 0x08 /* Private */,
-      29,    0,  143,    2, 0x08 /* Private */,
+       1,    0,  119,    2, 0x08 /* Private */,
+       3,    0,  120,    2, 0x08 /* Private */,
+       4,    0,  121,    2, 0x08 /* Private */,
+       5,    0,  122,    2, 0x08 /* Private */,
+       6,    0,  123,    2, 0x08 /* Private */,
+       7,    0,  124,    2, 0x08 /* Private */,
+       8,    2,  125,    2, 0x08 /* Private */,
+      12,    0,  130,    2, 0x08 /* Private */,
+      13,    0,  131,    2, 0x08 /* Private */,
+      14,    3,  132,    2, 0x08 /* Private */,
+      18,    2,  139,    2, 0x08 /* Private */,
+      21,    0,  144,    2, 0x08 /* Private */,
+      22,    0,  145,    2, 0x08 /* Private */,
+      23,    1,  146,    2, 0x08 /* Private */,
+      25,    0,  149,    2, 0x08 /* Private */,
+      26,    0,  150,    2, 0x08 /* Private */,
+      27,    0,  151,    2, 0x08 /* Private */,
+      28,    0,  152,    2, 0x08 /* Private */,
+      29,    0,  153,    2, 0x08 /* Private */,
+      30,    0,  154,    2, 0x08 /* Private */,
+      31,    0,  155,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -127,6 +132,8 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Bool,   24,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -161,6 +168,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 16: _t->onFitWindow(); break;
         case 17: _t->onZoomReset(); break;
         case 18: _t->onAbout(); break;
+        case 19: _t->onDebouncePreview(); break;
+        case 20: _t->onPreviewFinished(); break;
         default: ;
         }
     }
@@ -195,13 +204,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 19)
+        if (_id < 21)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 19;
+        _id -= 21;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 19)
+        if (_id < 21)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 19;
+        _id -= 21;
     }
     return _id;
 }

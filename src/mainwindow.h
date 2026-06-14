@@ -7,6 +7,8 @@
 #include <QAction>
 #include <QToolBar>
 #include <QDockWidget>
+#include <QTimer>
+#include <QFutureWatcher>
 #include "threading/taskmanager.h"
 #include "widgets/filtercontrolspanel.h"
 #include "widgets/progresspanel.h"
@@ -40,6 +42,8 @@ private slots:
     void onFitWindow();
     void onZoomReset();
     void onAbout();
+    void onDebouncePreview();
+    void onPreviewFinished();
 
 protected:
     void closeEvent(QCloseEvent* event) override;
@@ -94,6 +98,10 @@ private:
 
     TaskManager* m_taskManager;
     QImage m_previewImage;
+    QTimer* m_previewTimer;
+    QFutureWatcher<QPair<QImage, qint64>>* m_previewWatcher;
+    bool m_previewDirty;
+    qint64 m_previewSerial;
 };
 
 #endif

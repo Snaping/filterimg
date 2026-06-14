@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include <QStackedWidget>
 #include "imageviewer.h"
+#include "splitcomparewidget.h"
 
 class CompareViewer : public QWidget
 {
@@ -40,20 +41,11 @@ public slots:
     void fitToWindow();
     void resetZoom();
 
-private slots:
-    void onModeChanged();
-
 protected:
-    void paintEvent(QPaintEvent* event) override;
-    void resizeEvent(QResizeEvent* event) override;
-    void mouseMoveEvent(QMouseEvent* event) override;
-    void mousePressEvent(QMouseEvent* event) override;
-    void leaveEvent(QEvent* event) override;
     void wheelEvent(QWheelEvent* event) override;
 
 private:
     void setupUi();
-    void renderSplitView();
 
     QImage m_original;
     QImage m_result;
@@ -69,13 +61,11 @@ private:
     QStackedWidget* m_stackedWidget;
     ImageViewer* m_originalViewer;
     ImageViewer* m_resultViewer;
-    QWidget* m_splitWidget;
+    SplitCompareWidget* m_splitCompareWidget;
 
     bool m_showGrid;
     int m_gridRows;
     int m_gridCols;
-    bool m_draggingSlider;
-    bool m_toggleShowOriginal;
 };
 
 #endif

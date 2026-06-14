@@ -5,3 +5,4 @@
 #include <RZ4CM6YYJ6/moc_filtercontrolspanel.cpp>
 #include <RZ4CM6YYJ6/moc_imageviewer.cpp>
 #include <RZ4CM6YYJ6/moc_progresspanel.cpp>
+#include <RZ4CM6YYJ6/moc_splitcomparewidget.cpp>

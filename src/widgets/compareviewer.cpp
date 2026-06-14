@@ -2,11 +2,9 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QButtonGroup>
-#include <QPainter>
 #include <QMouseEvent>
-#include <QResizeEvent>
 #include <QWheelEvent>
-#include <QSlider>
+#include <QLabel>
 
 CompareViewer::CompareViewer(QWidget* parent)
     : QWidget(parent)
@@ -15,8 +13,6 @@ CompareViewer::CompareViewer(QWidget* parent)
     , m_showGrid(false)
     , m_gridRows(2)
     , m_gridCols(2)
-    , m_draggingSlider(false)
-    , m_toggleShowOriginal(false)
 {
     setupUi();
 }
@@ -63,15 +59,13 @@ void CompareViewer::setupUi()
 
     m_stackedWidget = new QStackedWidget(this);
 
-    m_splitWidget = new QWidget(m_stackedWidget);
-    m_splitWidget->setMinimumHeight(200);
-    m_splitWidget->setMouseTracking(true);
-    m_splitWidget->setAttribute(Qt::WA_OpaquePaintEvent, false);
+    m_splitCompareWidget = new SplitCompareWidget(m_stackedWidget);
+    connect(m_splitCompareWidget, &SplitCompareWidget::splitPositionChanged, this, &CompareViewer::setSplitPosition);
 
     m_originalViewer = new ImageViewer(m_stackedWidget);
     m_resultViewer = new ImageViewer(m_stackedWidget);
 
-    m_stackedWidget->addWidget(m_splitWidget);
+    m_stackedWidget->addWidget(m_splitCompareWidget);
     m_stackedWidget->addWidget(m_originalViewer);
     m_stackedWidget->addWidget(m_resultViewer);
     m_stackedWidget->setCurrentIndex(0);
@@ -83,14 +77,14 @@ void CompareViewer::setOriginalImage(const QImage& image)
 {
     m_original = image;
     m_originalViewer->setImage(image);
-    m_splitWidget->update();
+    m_splitCompareWidget->setOriginalImage(image);
 }
 
 void CompareViewer::setResultImage(const QImage& image)
 {
     m_result = image;
     m_resultViewer->setImage(image);
-    m_splitWidget->update();
+    m_splitCompareWidget->setResultImage(image);
 }
 
 void CompareViewer::clear()
@@ -99,7 +93,7 @@ void CompareViewer::clear()
     m_result = QImage();
     m_originalViewer->clear();
     m_resultViewer->clear();
-    m_splitWidget->update();
+    m_splitCompareWidget->setImages(QImage(), QImage());
 }
 
 void CompareViewer::setViewMode(ViewMode mode)
@@ -108,7 +102,8 @@ void CompareViewer::setViewMode(ViewMode mode)
     m_mode = mode;
     switch (mode) {
     case SplitView:
-        m_stackedWidget->setCurrentWidget(m_splitWidget);
+        m_splitCompareWidget->setMode(SplitCompareWidget::SplitView);
+        m_stackedWidget->setCurrentWidget(m_splitCompareWidget);
         m_splitBtn->setChecked(true);
         break;
     case OriginalOnly:
@@ -120,23 +115,18 @@ void CompareViewer::setViewMode(ViewMode mode)
         m_resultBtn->setChecked(true);
         break;
     case ToggleView:
-        m_stackedWidget->setCurrentWidget(m_splitWidget);
+        m_splitCompareWidget->setMode(SplitCompareWidget::ToggleView);
+        m_stackedWidget->setCurrentWidget(m_splitCompareWidget);
         m_toggleBtn->setChecked(true);
         break;
     }
-    emit modeChanged(mode);
-    update();
+    emit modeChanged(m_mode);
 }
 
 void CompareViewer::setSplitPosition(int percent)
 {
     m_splitPos = qBound(0, percent, 100);
-    m_splitWidget->update();
-}
-
-void CompareViewer::onModeChanged()
-{
-    m_splitWidget->update();
+    m_splitCompareWidget->setSplitPosition(m_splitPos);
 }
 
 void CompareViewer::setGridOverlay(int rows, int cols, bool show)
@@ -146,157 +136,7 @@ void CompareViewer::setGridOverlay(int rows, int cols, bool show)
     m_showGrid = show;
     m_originalViewer->showGridOverlay(rows, cols, show);
     m_resultViewer->showGridOverlay(rows, cols, show);
-    m_splitWidget->update();
-}
-
-static void drawGridOnImage(QPainter& p, const QImage& img, int x, int y, int w, int h,
-                             int gridRows, int gridCols, bool showGrid, bool isOriginal,
-                             const QString& labelText)
-{
-    if (img.isNull()) return;
-    QRect target(x, y, w, h);
-    QSize scaled = img.size().scaled(w, h, Qt::KeepAspectRatio);
-    int dx = x + (w - scaled.width()) / 2;
-    int dy = y + (h - scaled.height()) / 2;
-
-    p.drawImage(QRect(dx, dy, scaled.width(), scaled.height()), img);
-
-    if (showGrid) {
-        QPen oldPen = p.pen();
-        p.setPen(QPen(QColor(isOriginal ? 0 : 255, isOriginal ? 120 : 50, 0, 180), 2, Qt::DashLine));
-        int cellW = scaled.width() / gridCols;
-        int cellH = scaled.height() / gridRows;
-        for (int c = 1; c < gridCols; ++c) {
-            int gx = dx + c * cellW;
-            p.drawLine(gx, dy, gx, dy + scaled.height());
-        }
-        for (int r = 1; r < gridRows; ++r) {
-            int gy = dy + r * cellH;
-            p.drawLine(dx, gy, dx + scaled.width(), gy);
-        }
-        for (int r = 0; r < gridRows; ++r) {
-            for (int c = 0; c < gridCols; ++c) {
-                int idx = r * gridCols + c;
-                int tx = dx + c * cellW + 6;
-                int ty = dy + r * cellH + 20;
-                QFont f = p.font();
-                f.setBold(true);
-                f.setPointSize(qMax(9, scaled.width() / 120));
-                p.setFont(f);
-                p.drawText(tx, ty, QString::number(idx + 1));
-            }
-        }
-        p.setPen(oldPen);
-    }
-
-    if (!labelText.isEmpty()) {
-        QFont f = p.font();
-        f.setBold(true);
-        f.setPointSize(qMax(10, w / 80));
-        p.setFont(f);
-        p.setPen(Qt::white);
-        int ly = dy + 8;
-        p.drawText(dx + 10, ly + QFontMetrics(f).ascent(), labelText);
-    }
-
-    Q_UNUSED(target);
-}
-
-void CompareViewer::paintEvent(QPaintEvent* event)
-{
-    QWidget::paintEvent(event);
-    if (m_mode != SplitView && m_mode != ToggleView) return;
-
-    QPainter p(m_splitWidget);
-    p.fillRect(m_splitWidget->rect(), QColor(50, 50, 50));
-
-    int w = m_splitWidget->width();
-    int h = m_splitWidget->height();
-
-    if (m_mode == ToggleView) {
-        if (m_toggleShowOriginal) {
-            drawGridOnImage(p, m_original, 0, 0, w, h, m_gridRows, m_gridCols, m_showGrid, true, QStringLiteral("原图 (点击切换)"));
-        } else {
-            drawGridOnImage(p, m_result, 0, 0, w, h, m_gridRows, m_gridCols, m_showGrid, false, QStringLiteral("结果图 (点击切换)"));
-        }
-        return;
-    }
-
-    int halfW = (w * m_splitPos) / 100;
-
-    drawGridOnImage(p, m_original, 0, 0, halfW, h, m_gridRows, m_gridCols, m_showGrid, true, QStringLiteral("原图"));
-    drawGridOnImage(p, m_result, halfW, 0, w - halfW, h, m_gridRows, m_gridCols, m_showGrid, false, QStringLiteral("结果图"));
-
-    QPen linePen(QColor(255, 255, 255), 3);
-    p.setPen(linePen);
-    p.drawLine(halfW, 0, halfW, h);
-
-    int handleW = 40;
-    int handleH = 60;
-    int hx = halfW - handleW / 2;
-    int hy = h / 2 - handleH / 2;
-    QRect handleRect(hx, hy, handleW, handleH);
-    p.setBrush(QColor(255, 255, 255, 220));
-    p.setPen(QColor(100, 100, 100));
-    p.drawRoundedRect(handleRect, 8, 8);
-    p.setPen(QColor(50, 50, 50));
-    QFont f = p.font();
-    f.setBold(true);
-    f.setPointSize(16);
-    p.setFont(f);
-    p.drawText(handleRect, Qt::AlignCenter, QStringLiteral("◀ ▶"));
-
-    Q_UNUSED(event);
-}
-
-void CompareViewer::resizeEvent(QResizeEvent* event)
-{
-    QWidget::resizeEvent(event);
-    m_splitWidget->update();
-}
-
-void CompareViewer::mouseMoveEvent(QMouseEvent* event)
-{
-    QWidget::mouseMoveEvent(event);
-    if (m_mode != SplitView) return;
-    if (m_draggingSlider) {
-        int localX = event->pos().x() - m_splitWidget->x();
-        int p = (localX * 100) / qMax(1, m_splitWidget->width());
-        m_splitPos = qBound(5, p, 95);
-        m_splitWidget->update();
-    }
-}
-
-void CompareViewer::mousePressEvent(QMouseEvent* event)
-{
-    QWidget::mousePressEvent(event);
-    if (m_mode == ToggleView && event->button() == Qt::LeftButton) {
-        m_toggleShowOriginal = !m_toggleShowOriginal;
-        m_splitWidget->update();
-        return;
-    }
-    if (m_mode == SplitView && event->button() == Qt::LeftButton) {
-        QPoint pos = event->pos();
-        int handleW = 40;
-        int handleH = 60;
-        int halfW = (m_splitWidget->width() * m_splitPos) / 100;
-        int hx = halfW - handleW / 2;
-        int hy = m_splitWidget->height() / 2 - handleH / 2;
-        QRect handleRect(hx + m_splitWidget->x(), hy + m_splitWidget->y(), handleW, handleH);
-        if (handleRect.contains(pos)) {
-            m_draggingSlider = true;
-            setCursor(Qt::SizeHorCursor);
-        }
-    }
-}
-
-void CompareViewer::leaveEvent(QEvent* event)
-{
-    if (m_draggingSlider) {
-        m_draggingSlider = false;
-        unsetCursor();
-    }
-    QWidget::leaveEvent(event);
+    m_splitCompareWidget->setGridOverlay(rows, cols, show);
 }
 
 void CompareViewer::wheelEvent(QWheelEvent* event)

@@ -23,6 +23,8 @@ set(PROJECT_SOURCES
     src/threading/taskmanager.cpp
     src/widgets/imageviewer.h
     src/widgets/imageviewer.cpp
+    src/widgets/splitcomparewidget.h
+    src/widgets/splitcomparewidget.cpp
     src/widgets/progresspanel.h
     src/widgets/progresspanel.cpp
     src/widgets/filtercontrolspanel.h

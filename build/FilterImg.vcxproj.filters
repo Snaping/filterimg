@@ -19,6 +19,9 @@
     <ClCompile Include="D:\WorkSpace\Agent\MultiSoloSpace\612\filterimg\src\widgets\imageviewer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\WorkSpace\Agent\MultiSoloSpace\612\filterimg\src\widgets\splitcomparewidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="D:\WorkSpace\Agent\MultiSoloSpace\612\filterimg\src\widgets\progresspanel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -49,6 +52,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\WorkSpace\Agent\MultiSoloSpace\612\filterimg\src\widgets\imageviewer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\WorkSpace\Agent\MultiSoloSpace\612\filterimg\src\widgets\splitcomparewidget.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\WorkSpace\Agent\MultiSoloSpace\612\filterimg\src\widgets\progresspanel.h">

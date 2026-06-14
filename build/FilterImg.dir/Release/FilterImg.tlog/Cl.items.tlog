@@ -3,6 +3,7 @@ D:\WorkSpace\Agent\MultiSoloSpace\612\filterimg\src\mainwindow.cpp;D:\WorkSpace\
 D:\WorkSpace\Agent\MultiSoloSpace\612\filterimg\src\filters\filter.cpp;D:\WorkSpace\Agent\MultiSoloSpace\612\filterimg\build\FilterImg.dir\Release\filter.obj
 D:\WorkSpace\Agent\MultiSoloSpace\612\filterimg\src\threading\taskmanager.cpp;D:\WorkSpace\Agent\MultiSoloSpace\612\filterimg\build\FilterImg.dir\Release\taskmanager.obj
 D:\WorkSpace\Agent\MultiSoloSpace\612\filterimg\src\widgets\imageviewer.cpp;D:\WorkSpace\Agent\MultiSoloSpace\612\filterimg\build\FilterImg.dir\Release\imageviewer.obj
+D:\WorkSpace\Agent\MultiSoloSpace\612\filterimg\src\widgets\splitcomparewidget.cpp;D:\WorkSpace\Agent\MultiSoloSpace\612\filterimg\build\FilterImg.dir\Release\splitcomparewidget.obj
 D:\WorkSpace\Agent\MultiSoloSpace\612\filterimg\src\widgets\progresspanel.cpp;D:\WorkSpace\Agent\MultiSoloSpace\612\filterimg\build\FilterImg.dir\Release\progresspanel.obj
 D:\WorkSpace\Agent\MultiSoloSpace\612\filterimg\src\widgets\filtercontrolspanel.cpp;D:\WorkSpace\Agent\MultiSoloSpace\612\filterimg\build\FilterImg.dir\Release\filtercontrolspanel.obj
 D:\WorkSpace\Agent\MultiSoloSpace\612\filterimg\src\widgets\compareviewer.cpp;D:\WorkSpace\Agent\MultiSoloSpace\612\filterimg\build\FilterImg.dir\Release\compareviewer.obj
