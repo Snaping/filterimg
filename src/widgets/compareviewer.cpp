@@ -48,7 +48,7 @@ void CompareViewer::setupUi()
     bg->addButton(m_originalBtn, OriginalOnly);
     bg->addButton(m_resultBtn, ResultOnly);
     bg->addButton(m_toggleBtn, ToggleView);
-    connect(bg, QOverload<int>::of(&QButtonGroup::idClicked), this, &CompareViewer::setViewMode);
+    connect(bg, QOverload<int>::of(&QButtonGroup::buttonClicked), this, &CompareViewer::setViewMode);
 
     tbLayout->addWidget(new QLabel(QStringLiteral("显示模式:"), m_toolBar));
     tbLayout->addWidget(m_splitBtn);

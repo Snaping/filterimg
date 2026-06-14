@@ -419,7 +419,7 @@ void MainWindow::onAbout()
     QString aboutText = QStringLiteral(
         "<h2>多线程图像滤镜处理器</h2>"
         "<p><b>版本:</b> 1.0</p>"
-        "<p>一个功能强大的 C++ / Qt6 多线程图像滤镜处理程序。</p>"
+        "<p>一个功能强大的 C++ / Qt5 多线程图像滤镜处理程序。</p>"
         "<h3>主要特性:</h3>"
         "<ul>"
         "<li>8 种内置滤镜: 灰度、反色、高斯模糊、Sobel 边缘、浮雕、油画、锐化、复古棕</li>"

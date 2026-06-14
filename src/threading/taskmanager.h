@@ -17,7 +17,7 @@ struct RegionResult {
     QRect region;
     QImage processed;
     qint64 elapsedMs;
-    int threadId;
+    qint64 threadId;
 };
 
 struct ProcessingStats {

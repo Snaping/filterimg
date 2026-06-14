@@ -1,0 +1,351 @@
+{
+	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
+	"BUILD_DIR" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/FilterImg_autogen",
+	"CMAKE_BINARY_DIR" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg",
+	"CMAKE_EXECUTABLE" : "D:/setup/CMake/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/CMakeLists.txt",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeSystem.cmake.in",
+		"D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/CMakeFiles/3.30.3/CMakeSystem.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Platform/Windows-Initialize.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeDetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Platform/Windows-Determine-CXX.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeCompilerIdDetection.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/ADSP-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/ARMCC-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/ARMClang-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/AppleClang-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/Clang-DetermineCompilerInternal.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/Borland-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/Clang-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/Clang-DetermineCompilerInternal.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/Cray-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/CrayClang-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/Embarcadero-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/Fujitsu-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/GHS-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/HP-CXX-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/IAR-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/Intel-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/MSVC-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/NVHPC-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/NVIDIA-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/OrangeC-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/PGI-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/PathScale-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/SCO-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/TI-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/TIClang-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/Tasking-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/Watcom-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/XL-CXX-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CompilerId/VS-10.vcxproj.in",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeFindBinUtils.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeCXXCompiler.cmake.in",
+		"D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/CMakeFiles/3.30.3/CMakeCXXCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeGenericSystem.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Platform/Windows.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeCXXInformation.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/MSVC-CXX.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/MSVC.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Platform/Windows-MSVC-CXX.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Platform/Windows-MSVC.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeDetermineRCCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeRCCompiler.cmake.in",
+		"D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/CMakeFiles/3.30.3/CMakeRCCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeRCInformation.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeTestRCCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeTestCompilerCommon.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Internal/CMakeDetermineLinkerId.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeParseImplicitIncludeInfo.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeParseImplicitLinkInfo.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeParseLibraryArchitecture.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeTestCompilerCommon.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerSupport.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/Internal/FeatureTesting.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeCXXCompiler.cmake.in",
+		"D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/CMakeFiles/3.30.3/CMakeCXXCompiler.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5/Qt5Config.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5/Qt5ModuleLocation.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeParseArguments.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsIntegrationPlugin.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Widgets/Qt5Widgets_QWindowsVistaStylePlugin.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
+		"D:/setup/CMake/share/cmake-3.30/Modules/CMakeParseArguments.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Concurrent/Qt5ConcurrentConfigVersion.cmake",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/lib/cmake/Qt5Concurrent/Qt5ConcurrentConfig.cmake"
+	],
+	"CMAKE_SOURCE_DIR" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/src/filters/filter.h",
+			"MU",
+			"Y2RMYTRVW5/moc_filter.cpp",
+			null
+		],
+		[
+			"D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/src/mainwindow.h",
+			"MU",
+			"UVLADIE3JM/moc_mainwindow.cpp",
+			null
+		],
+		[
+			"D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/src/threading/taskmanager.h",
+			"MU",
+			"D7ALEVJ3RG/moc_taskmanager.cpp",
+			null
+		],
+		[
+			"D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/src/widgets/compareviewer.h",
+			"MU",
+			"RZ4CM6YYJ6/moc_compareviewer.cpp",
+			null
+		],
+		[
+			"D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/src/widgets/filtercontrolspanel.h",
+			"MU",
+			"RZ4CM6YYJ6/moc_filtercontrolspanel.cpp",
+			null
+		],
+		[
+			"D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/src/widgets/imageviewer.h",
+			"MU",
+			"RZ4CM6YYJ6/moc_imageviewer.cpp",
+			null
+		],
+		[
+			"D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/src/widgets/progresspanel.h",
+			"MU",
+			"RZ4CM6YYJ6/moc_progresspanel.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/FilterImg_autogen/include",
+	"INCLUDE_DIR_Debug" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/FilterImg_autogen/include_Debug",
+	"INCLUDE_DIR_MinSizeRel" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/FilterImg_autogen/include_MinSizeRel",
+	"INCLUDE_DIR_RelWithDebInfo" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/FilterImg_autogen/include_RelWithDebInfo",
+	"INCLUDE_DIR_Release" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/FilterImg_autogen/include_Release",
+	"MOC_COMPILATION_FILE" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/FilterImg_autogen/mocs_compilation.cpp",
+	"MOC_COMPILATION_FILE_Debug" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/FilterImg_autogen/mocs_compilation_Debug.cpp",
+	"MOC_COMPILATION_FILE_MinSizeRel" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/FilterImg_autogen/mocs_compilation_MinSizeRel.cpp",
+	"MOC_COMPILATION_FILE_RelWithDebInfo" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/FilterImg_autogen/mocs_compilation_RelWithDebInfo.cpp",
+	"MOC_COMPILATION_FILE_Release" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/FilterImg_autogen/mocs_compilation_Release.cpp",
+	"MOC_DEFINITIONS" : [],
+	"MOC_DEFINITIONS_Debug" : 
+	[
+		"QT_CONCURRENT_LIB",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_WIDGETS_LIB",
+		"WIN32"
+	],
+	"MOC_DEFINITIONS_MinSizeRel" : 
+	[
+		"QT_CONCURRENT_LIB",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NO_DEBUG",
+		"QT_WIDGETS_LIB",
+		"WIN32"
+	],
+	"MOC_DEFINITIONS_RelWithDebInfo" : 
+	[
+		"QT_CONCURRENT_LIB",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NO_DEBUG",
+		"QT_WIDGETS_LIB",
+		"WIN32"
+	],
+	"MOC_DEFINITIONS_Release" : 
+	[
+		"QT_CONCURRENT_LIB",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NO_DEBUG",
+		"QT_WIDGETS_LIB",
+		"WIN32"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : [],
+	"MOC_INCLUDES_Debug" : 
+	[
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include/QtCore",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/mkspecs/win32-msvc",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include/QtGui",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include/QtANGLE",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include/QtWidgets",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include/QtConcurrent"
+	],
+	"MOC_INCLUDES_MinSizeRel" : 
+	[
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include/QtCore",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/mkspecs/win32-msvc",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include/QtGui",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include/QtANGLE",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include/QtWidgets",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include/QtConcurrent"
+	],
+	"MOC_INCLUDES_RelWithDebInfo" : 
+	[
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include/QtCore",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/mkspecs/win32-msvc",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include/QtGui",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include/QtANGLE",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include/QtWidgets",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include/QtConcurrent"
+	],
+	"MOC_INCLUDES_Release" : 
+	[
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include/QtCore",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/mkspecs/win32-msvc",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include/QtGui",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include/QtANGLE",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include/QtWidgets",
+		"D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/include/QtConcurrent"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : [],
+	"MOC_PREDEFS_FILE" : "",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : true,
+	"PARALLEL" : 4,
+	"PARSE_CACHE_FILE" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/CMakeFiles/FilterImg_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE_Debug" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/CMakeFiles/FilterImg_autogen.dir/ParseCache_Debug.txt",
+	"PARSE_CACHE_FILE_MinSizeRel" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/CMakeFiles/FilterImg_autogen.dir/ParseCache_MinSizeRel.txt",
+	"PARSE_CACHE_FILE_RelWithDebInfo" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/CMakeFiles/FilterImg_autogen.dir/ParseCache_RelWithDebInfo.txt",
+	"PARSE_CACHE_FILE_Release" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/CMakeFiles/FilterImg_autogen.dir/ParseCache_Release.txt",
+	"QT_MOC_EXECUTABLE" : "D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "D:/setup/Qt/Qt5.14.2/5.14.2/msvc2017_64/bin/uic.exe",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 14,
+	"SETTINGS_FILE" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/CMakeFiles/FilterImg_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE_Debug" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/CMakeFiles/FilterImg_autogen.dir/AutogenUsed_Debug.txt",
+	"SETTINGS_FILE_MinSizeRel" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/CMakeFiles/FilterImg_autogen.dir/AutogenUsed_MinSizeRel.txt",
+	"SETTINGS_FILE_RelWithDebInfo" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/CMakeFiles/FilterImg_autogen.dir/AutogenUsed_RelWithDebInfo.txt",
+	"SETTINGS_FILE_Release" : "D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/build/CMakeFiles/FilterImg_autogen.dir/AutogenUsed_Release.txt",
+	"SOURCES" : 
+	[
+		[
+			"D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/src/filters/filter.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/src/main.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/src/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/src/threading/taskmanager.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/src/widgets/compareviewer.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/src/widgets/filtercontrolspanel.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/src/widgets/imageviewer.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/WorkSpace/Agent/MultiSoloSpace/612/filterimg/src/widgets/progresspanel.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}
